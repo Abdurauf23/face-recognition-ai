@@ -1,2 +1,5 @@
 __pycache__/*
 venv/*
+resources/bronze/*
+resources/silver/*
+resources/golden/*

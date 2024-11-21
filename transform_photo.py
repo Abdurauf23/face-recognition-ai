@@ -9,7 +9,7 @@ def transform_photo(image_path: str, destination_folder: str) -> str:
                 img = img.convert('RGB')
             img = img.convert("L")
 
-            file_name, _ = os.path.splitext(os.path.basename(image_path))[0]
+            file_name, _ = os.path.splitext(os.path.basename(image_path))
             new_file_name = f"{file_name}_transformed.jpg"
             new_file_path = os.path.join(destination_folder, new_file_name)
             
