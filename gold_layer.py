@@ -26,7 +26,7 @@ class EmotionRecognition:
         ])
 
     def build_model(self):
-        model = models.resnet18(pretrained=True)
+        model = models.resnet152(pretrained=True)
         model.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
         model.fc = nn.Linear(model.fc.in_features, 7)  # Assuming 7 emotion classes
         return model
@@ -37,7 +37,7 @@ class EmotionRecognition:
         self.model.eval()
 
     def predict(self, image_path):
-        img = Image.open(image_path).convert('L')  # Grayscale
+        img = Image.open(image_path).resize((256,256)).convert('L')  # Grayscale
         img_tensor = self.transform(img).unsqueeze(0).to(self.device)
 
         with torch.no_grad():
