@@ -19,7 +19,7 @@ BRONZE_DIR = "resources/bronze/"
 SILVER_DIR = "resources/silver/"
 GOLDEN_DIR = "resources/golden/"
 CSV = "file.csv"
-MODEL = "model_emotion_v4.pth"
+MODEL = "model_emotion_v3.pth"
 
 # create directories if not exist
 if not os.path.exists(BRONZE_DIR): os.makedirs(BRONZE_DIR)
